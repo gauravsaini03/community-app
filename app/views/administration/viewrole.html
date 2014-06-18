@@ -37,19 +37,31 @@
         </div>
         <h3>{{'label.heading.permissions' | translate}}:&nbsp;&nbsp;<strong>{{formatName(previousGrouping)}}</strong>
         </h3>
+        <li ng-repeat="te in accByEnt | unique:'entityName'">
+          {{te.code}}
+        </li>
+        
         <table width="100%">
             <tr>
                 <td width="15%" valign="top">
                     <table>
-                        <tr ng-repeat="grouping in groupings" ng-class="{graybg: grouping == previousGrouping}">
-                            <td><a ng-click="showPermissions(grouping);"><span>{{formatName(grouping)}}</span></a></td>
+                        <tr ng-repeat="grp in grps | unique:'grouping'" ng-class="{graybg: grouping == previousGrouping}">
+                            <td><a ng-click="showPermissions(grp.grouping);"><span>{{formatName(grp.grouping)}}</span></a></td>
                         </tr>
                     </table>
                 </td>
                 <td width="85%" valign="top">
                     <table width="100%">
-                        <tr ng-repeat="permission in permissions.permissions">
-                            <td width="50%"><label for="{{permission.code}}">{{permissionName(permission.code)}}</label>
+                        <tr>
+                            <td width="30%"></td>
+                            <td ng-repeat="permission in permissions | unique:'actionName'">
+                                <label for="{{permission.actionName}}">{{permission.actionName}}  </label>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%">
+                        <tr ng-repeat="permission in permissions | unique:'entityName'">
+                            <td width="30%"><label for="{{permission.entityName}}">{{permissionName(permission.entityName)}}</label>
                             </td>
                             <td><input id="{{permission.code}}" type="checkbox"
                                        data-ng-model="formData[permission.code]" ng-disabled="isDisabled"></td>
