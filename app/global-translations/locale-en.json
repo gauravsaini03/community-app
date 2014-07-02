@@ -130,6 +130,8 @@
     "label.input.no.decimalplaces":"Zero decimal places",
     "label.input.gender":"Gender",
     "label.input.dateofbirth":"Date of Birth",
+    "label.input.sqlSearch":"SQL Search",
+    "label.input.transfertype":"Transfer Type",
 
     "#Buttons": "..",
     "label.button.previous": "Previous",
@@ -454,6 +456,8 @@
     "label.input.mobilenumber": "Mobile number",
     "label.input.client.activationdate": "Activation date",
     "label.input.client.creationdate": "Creation date",
+    "label.input.clientName":"Client Name",
+    "label.input.clientId":"Client Id",
 
     "#Buttons": "..",
     "label.button.createclient": "Create Client",
@@ -693,6 +697,9 @@
     "label.heading.applicant": "Applicant",
     "label.heading.fromaccount": "From Account",
     "label.heading.fromaccounttype": "From Account Type",
+    "label.heading.fromClient":"From Client",
+    "label.heading.toClient":"To Client",
+    "label.heading.executionTime":"Execution Time",
     "label.heading.currency": "Currency",
     "label.heading.transferringto": "Transferring To",
     "label.heading.debitaccount":"Debit Account",
@@ -1414,6 +1421,8 @@
     "label.heading.closerecurringdepositaccount":"Recurring Deposit Closure on Maturity",
     "label.heading.editrecurringdepositaccounttransaction":"Edit Recurring Account Transaction",
     "label.heading.editfixeddepositaccounttransaction":"Edit Fixed Deposit Account Transaction",
+    "label.heading.enforceMinRequiredBalance":"Enforce to maintain minimum balance",
+    "label.heading.minRequiredBalance":"Minimum balance",
 
 
     "#Anchors": "..",
@@ -1483,6 +1492,10 @@
     "label.input.deposit.start.date":"Deposit Start date",
     "label.input.recurring.frequency":"Deposit Frequency",
     "label.input.same.as.group.meeting":"Deposit Frequency Same as Group/Center meeting",
+    "label.input.minbalanceforinterest":"Balance Required For Interest Calculation",
+    "label.heading.minbalanceforinterestcalculation":"Balance Required For Interest Calculation",
+    "label.input.enforceMinRequiredBalance":"Enforce to maintain minimum balance",
+    "label.input.minRequiredBalance":"Minimum balance",
 
 "#Buttons": "..",
     "label.button.undo": "Undo",
@@ -1809,6 +1822,7 @@
     "label.anchor.managefunds": "Manage Funds",
     "label.anchor.manageoffices": "Manage Offices",
     "label.anchor.editrole":"Edit Role",
+    "label.anchor.standinginstruction.history":"Standing Instructions History",
 
 
     "#Inputs": "..",
@@ -1823,6 +1837,7 @@
     "label.input.parentoffice": "Parent office",
     "label.input.newfund": "New Fund",
     "label.input.filterbynameexternalid": "Filter by name/external id",
+    "label.input.fromAccountId":"From Account Id",
 
     "#Buttons": "..",
     "label.button.createemployee": "Create Employee",
@@ -1837,6 +1852,7 @@
     "label.currenciesavailableacrossorganizationfordifferentproducts": "Currencies available across organization for different products",
     "label.fundsareassociatedwithloans": "Funds are associated with loans",
     "label.easywaytoreassignalltheloanfromonelotoanotherlo": "Easy way to reassign all the loan from one LO to another LO",
+    "label.view.standinginstructions.history.logging":"View logged history of standing instructions",
 
     "#Enumeration & Error Messages": "..",
     "validation.msg.currencies.currencies.cannot.be.empty": "You must select at least one currency that is 'allowed' for your organization.",
