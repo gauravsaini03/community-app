@@ -91,7 +91,7 @@ define(['Q', 'underscore', 'mifosX'], function (Q) {
             'organization/ManageFundsController',
             'accounting/AccFreqPostingController',
             'accounting/AccCoaController',
-            'accounting/AccCreateGLAccountContoller',
+            'accounting/AccCreateGLAccountController',
             'accounting/AccViewGLAccountContoller',
             'accounting/AccEditGLAccountController',
             'accounting/ViewTransactionController',
@@ -107,6 +107,7 @@ define(['Q', 'underscore', 'mifosX'], function (Q) {
             'accounting/AddFinancialMappingController',
             'accounting/ViewFinancialActivityController',
             'accounting/EditFinancialActivityMappingController',
+            'accounting/PeriodicAccrualAccountingController',
             'system/CodeController',
             'system/EditCodeController',
             'system/ViewCodeController',
@@ -229,7 +230,8 @@ define(['Q', 'underscore', 'mifosX'], function (Q) {
             'HasPermissionDirective',
             'ActivitiesDisplayPanelDirective',
             'ScrollbarTopDirective',
-            'ChosenComboboxDirective'
+            'ChosenComboboxDirective',
+            'NumberFormatDirective'
         ]
     };
 

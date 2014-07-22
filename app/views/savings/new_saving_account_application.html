@@ -172,14 +172,14 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="paddedbottom10">
+            <td colspan="2" class="paddedbottom10" ng-hide="formData.allowOverdraft">
                 <input type="checkbox" ng-model="formData.enforceMinRequiredBalance"> &nbsp;<span
                     class="control-label">{{ 'label.input.enforceMinRequiredBalance' | translate }}&nbsp;</span>
             </td>
-            <td class="width14">
+            <td class="width14" ng-hide="formData.allowOverdraft">
                 <label class="control-label">{{ 'label.input.minRequiredBalance' | translate
                     }}&nbsp;</label></td>
-            <td class="width36 paddedbottom10">
+            <td class="width36 paddedbottom10" ng-hide="formData.allowOverdraft">
                 <input id="minRequiredBalance" type="text" class="form-control"
                        ng-model="formData.minRequiredBalance">
             </td>
@@ -199,7 +199,7 @@
     <hr/>
     <label class="control-label"><h4>{{ 'label.heading.charges' | translate }}</h4></label>
     <select ng-model="chargeId"
-            ng-options="charge.id as charge.name for charge in chargeOptions"
+            ng-options="charge.id as charge.name for charge in chargeOptions|filter:data.currency.code:strict"
             value="{{charge.id}}" class="form-control">
         <option value="">{{'label.selectcharge' | translate}}</option>
     </select>

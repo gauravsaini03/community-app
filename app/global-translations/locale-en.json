@@ -346,6 +346,8 @@
     "label.heading.logout":"Logout",
     "label.heading.search":"Search",
     "label.heading.help":"Help",
+    "label.heading.language":"Language",
+    "label.heading.primaryemail":"Primary Email",
 
 
     "#Menu Links": "..",
@@ -650,6 +652,7 @@
 
     "#Misc Labels": "..",
     "label.selectcenter": "Select center",
+    "label.selectclients": "Select clients",
 
     "#Enumeration & Error Messages": "..",
     "error.msg.group.duplicate.externalId": "Group with external id `{{params[0].value}}` already exists.",
@@ -729,6 +732,12 @@
     "label.heading.financialactivity":"Financial Activity",
     "label.heading.viewfinancialmapping":"View Financial Activity Mapping",
     "label.heading.edit.financial.activity.mapping":"Edit Financial Activity Mapping",
+    "label.heading.execute.periodic.accounting":"Run Periodic Accrual Accounting",
+    "label.execute.periodic.accounting":"Executes periodic accruals with specified date",
+    "label.anchor.periodicaccrualaccounting":"Periodic Accrual Accounting",
+    "label.heading.periodicaccrualaccounting":"Execute Periodic Accrual Accounting",
+    "label.periodicaccrual.tilldate":"Accrue Till",
+    "validation.msg.periodicaccrual.accrueTill.is.greater.than.date":"Date can't be in future",
 
     "#Menu Links": "..",
     "label.menu.filterbyoffice": "Filter by office",
@@ -801,11 +810,13 @@
     "label.button.listview": "List View",
     "label.button.treeview": "Tree View",
     "label.button.addaccount": "Add Account",
+    "label.button.addchildaccount": "Add Child Account",
     "label.button.addrule": "Add Rule",
     "label.button.createclosure": "Create Closure",
     "label.button.reverse": "Reverse",
     "label.button.redirecttonewtrx":"Redirect to New Transaction",
     "label.button.define.new.financial.mapping":"Define New Mapping",
+    "label.button.execute.periodic.accruals":"Run Periodic Accruals",
 
     "#Misc Labels": "..",
     "assetTransfer":"Asset Transfer",
@@ -1395,6 +1406,7 @@
     "label.heading.withdrawalfeefortransfers":"Apply Withdrawal fee for transfers",
     "label.heading.decimalplaces": "Decimal Places",
     "label.heading.charges": "Charges",
+    "label.heading.inactivatecharge":"Inactivate Charge",
     "label.heading.collectedon": "Collected On",
     "label.heading.transactionid": "Transaction ID",
     "label.heading.paymentdetails": "Payment Details",
@@ -1526,6 +1538,9 @@
     "label.button.paycharge":"Pay Charge",
     "label.button.waivecharge":"Waive Charge",
     "label.button.prematureClose":"Premature Close",
+    "label.button.inactivatecharge":"Inactivate Charge",
+    "label.button.showActiveCharges":"Active Charges",
+    "label.button.showInactiveCharges":"Inactive Charges",
 
     "#Misc Labels": "..",
     "label.selectcharge": "Select charge",
@@ -1711,6 +1726,7 @@
     "validation.msg.savingsaccountcharge.amount.not.greater.than.zero": "Savings Charge amount should be greater than zero.",
     "validation.msg.savingsaccount.feeOnMonthDay.cannot.be.blank": "Savings charge due on date is mandatory.",
     "validation.msg.savingsaccountcharge.dueDate.cannot.be.blank": "Savings charge `due on` date is mandatory.",
+    "validation.msg.savingsaccountcharge.inactivation.of.charge.not.allowed.when.charge.is.due":"Inactivation of charge not allowed when charge is due",
     "validation.msg.savingsaccount.savingsAccountTransactionType.payCharge.results.in.balance.going.negative": "Applying charge is not allowed as it results in negative account balance at some point in time.",
     "error.msg.savingsaccount.transaction.before.activation.date": "Transaction date cannot before account activation date `{{params[1].value}}`.",
     "error.msg.savingsaccount.transaction.account.is.not.active": "Transaction is not allowed. Account is not active.",
