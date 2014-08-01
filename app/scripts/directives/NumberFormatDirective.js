@@ -5,40 +5,44 @@
                 restrict: 'A',
                 require: 'ngModel',
                 link: function(scope, element, attr, ctrl) {
-                  var filter = $filter('number');
-                  
-                  function number(value) {
-                    return filter(value);
-                  }
-                  ctrl.$formatters.push(number);
-                  ctrl.$parsers.push(function (stringValue) {
-                    var index = stringValue.indexOf($locale.NUMBER_FORMATS.DECIMAL_SEP),
-                      decimal,
-                      fraction;
-          
-                    if (index >= 0) {
-                      decimal = stringValue.substring(0, index);
-                      fraction = stringValue.substring(index + 1);
-                    } else {
-                      decimal = stringValue;
-                      fraction = '';
+                    var filter = $filter('number');
+                    
+                    function number(value, fractionLength) {
+                      return filter(value, fractionLength);
                     }
-                    decimal = decimal.replace(/[^0-9]/g, '');
-                    fraction = fraction.replace(/[^0-9]/g, '');
-                    var result = +(decimal + '.' + fraction);
-                    if (result !== ctrl.$modelValue) {
-                      scope.$evalAsync(function () {
-                        ctrl.$viewValue = number(ctrl.$modelValue);
-                        ctrl.$render();
-                      });
-                    }
-                    return result;
-                  });
-                  scope.$on('$localeChangeSuccess', function (event, localeId) {
-                    ctrl.$viewValue = $filter('number')(ctrl.$modelValue);
-                    ctrl.$render();
-                  });
-          
+                    ctrl.$formatters.push(number);
+                    ctrl.$parsers.push(function (stringValue) {
+                      var index = stringValue.indexOf($locale.NUMBER_FORMATS.DECIMAL_SEP),
+                        decimal,
+                        fraction,
+                        fractionLength;
+                      if (index >= 0) {
+                        decimal = stringValue.substring(0, index);
+                        fraction = stringValue.substring(index + 1);
+                        if(index!=stringValue.length-1)
+                          fractionLength = fraction.length;
+                        else
+                          fractionLength = 0;
+                      } else {
+                        decimal = stringValue;
+                        fraction = '';
+                      }
+                      decimal = decimal.replace(/[^0-9]/g, '');
+                      fraction = fraction.replace(/[^0-9]/g, '');
+                      var result = +(decimal + '.' + fraction);
+                      if (result !== ctrl.$modelValue) {
+                        scope.$evalAsync(function () {
+                          ctrl.$viewValue = number(ctrl.$modelValue, fractionLength);
+                          ctrl.$render();
+                        });
+                      }
+                      return result;
+                    });
+                    scope.$on('$localeChangeSuccess', function (event, localeId) {
+                      ctrl.$viewValue = $filter('number')(ctrl.$modelValue);
+                      ctrl.$render();
+                    });
+            
                 }
             };
         }
