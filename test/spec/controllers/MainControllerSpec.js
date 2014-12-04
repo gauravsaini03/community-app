@@ -17,7 +17,7 @@ describe("MainController", function () {
         this.rootScope = jasmine.createSpy();
         this.localStorageService = jasmine.createSpyObj("localStorageService", ["get", "add"]);
         this.idle = jasmine.createSpyObj("$idle", ['watch', 'unwatch']);
-	this.tmhDynamicLocale = jasmine.createSpy("tmhDynamicLocale", ["set"]);
+	this.tmhDynamicLocale = jasmine.createSpyObj("tmhDynamicLocale", ["set"]);
 
         this.controller = new mifosX.controllers.MainController(this.scope,
             this.location,
